@@ -1,0 +1,26 @@
+pip install --upgrade --user awscli
+pip install --upgrade pip
+mv /usr/local/bin/pip /usr/bin
+mv /usr/local/bin/ipython /usr/bin
+
+
+
+a maybe for install Phantom:
+
+yum groupinstall 'Development Tools'
+yum group info 'Development Tools'
+
+
+get node v0.8.11:
+wget https://nodejs.org/dist/v6.11.0/node-v6.11.0.tar.gz
+
+tar -zxf node....
+
+cd into folder
+
+./configure
+make
+make install
+
+
+

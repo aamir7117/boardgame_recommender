@@ -1,0 +1,7 @@
+things I did for project
+
+July 4th - July 11th, scraping boardgamegeek website. There is an API but you can't get a list of all users from this api nor all games. I was specifically interested in each users rating for each game.
+
+July 11th - build input matrix
+
+
