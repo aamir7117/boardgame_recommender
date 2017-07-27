@@ -555,14 +555,16 @@ def make_pearson_similarity_model():
     +--------+------------------+-----------------+
     '''
 
-    def make_random_recommendations(cutoffs,precisions):
-        possible_counts = df['player_name'].value_counts()
-        number_games_rated = random.choice(possible_counts)
-        games_rated = random.sample(df['game_id'],number_games_rated)
-        # precisions = defaultdict(list)
-        for cutoff in cutoffs:
-            rand_recommendations = random.sample(df['game_id'],cutoff)
-            precision = (len(set(rand_recommendations) & set(games_rated)) * 1.) / cutoff
-            print precision
-            precisions[cutoff] += [precision]
-        gc.collect()
+def make_random_recommendations(cutoffs):
+    '''
+    for a list of cutoffs like [10,50,100], make random recommendations and check the precision of those recommendations
+    '''
+    possible_counts = df['player_name'].value_counts()
+    number_games_rated = random.choice(possible_counts)
+    games_rated = random.sample(df['game_id'],number_games_rated)
+    precisions = defaultdict(list)
+    for cutoff in cutoffs:
+        rand_recommendations = random.sample(df['game_id'],cutoff)
+        precision = (len(set(rand_recommendations) & set(games_rated)) * 1.) / cutoff
+        precisions[cutoff] += [precision]
+    return precisions
