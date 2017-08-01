@@ -63,7 +63,7 @@ def machine_counts():
     machines = [machine_1, machine_2, machine_3, machine_4, machine_5, machine_6, machine_7, machine_8, machine_9, machine_10, machine_11, machine_12, machine_13, machine_14, machine_15, machine_16, machine_17, machine_18, machine_19, machine_20, machine_21, machine_22, machine_23, machine_24, machine_25, machine_26, machine_27, machine_28, machine_29, machine_30, machine_31, machine_32]
     return [ratings.count() for ratings in machines]
 
-# print machine_counts()
+# print machine_counts() 
 
 
 # def concat_df(df):
