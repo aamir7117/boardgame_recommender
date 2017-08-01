@@ -77,7 +77,7 @@ def machine_counts():
 #         print "done with machine_{}".format(number)
 #     return df
 
-# df = concat_data()
+# df = concat_data()  
 
 def make_pandas_df(mongodb_collection):
     cols = ['game_id','game_name','player_name','player_rating']
