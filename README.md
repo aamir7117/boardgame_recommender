@@ -1,16 +1,22 @@
-I love boardgames and I made a boardgame recommender for casual and advanced users. It involved scraping Boardgamegeek.com for 0.5 billion ratings across 5000 boardgames for 165,000 users. 
+## Boardgame Recommender
 
-The data indicates that advanced users rate games more critically than casual users. This makes sense and is evident in the rating variances of the two subsets.
+### Motivation
 
-To my casual user, I'd like to recommend more popular boardgames like Catan, Carcasonne and Banagrams but to my advanced user, I want a much more personalized recommendation. So I used Pearson similarity to estimate ratings for advanced users, which is essentially the same as a cosine similarity adjusted for the mean of each game. This worked really well in accentuating the minor differences from the mean, which is quite meaningful for advanced users. 
+I love boardgames and every time I come across a new one that I like, I think to myself: how come I haven't heard of this game before? I know there are many boardgame fans out there with the same dilemma. In fact, lots of these fans hang out on boardgamegeek.com where they rate games and can see the average rating of a lot of games. Okay, that helps to know which games are the most popular based on their average ratings. But with all of this data, we should be able to make a better recommendation. So that's what I did.
 
-For casual users, I used a Jaccard and Cosine similarity metric, both of which performed similarly in RMSE, which means that the fact that a casual user has rated a particular game is much more important than the value of the rating itself! So my final model for this user subset uses Jaccard similarity. 
+### Data
+I used 10 parallelized Selenium scrapers to extract the individual ratings for every boardgame that was rated on boardgamegeek.com for the last 17 years, across the whole world. In total, I have the ratings of 165,000 users across 5000 boardgames. This data is very sparse (1/200 values present) and naturally, some boardgames have many more ratings than others. Users also follow this pattern, in that, some users rate much more frequently than others.
 
-There is much more to be done on this dataset including joining it with game data, which is readily available. Using features like suggested playing time, mechanics (dice roll, cards, strategy etc.), I'd like to further personalize the recommendations. 
+### Framework
+I know from personal experience that not all boardgame fans are the same. My sister for example really likes games like Codenames and Bananagrams but she isn't really interested in games like Dominion, 7-wonders, Specter Ops etc. So I knew I had to subset my 165,000 users into a Casual player or an Advanced player. I chose users 1-50 ratings as casual/light users and >50 ratings as advanced users. This was convenient because around 60% of users have rated at least 50 games so both user subsets had a substantial amount of users in them. Also, the variance in ratings increased from xxxx for all users to xxxx for just advanced users. For light users it dropped to xxxx. This indicates that advanced users tend to rate further away from the average and are perhaps more critical of the games. 
 
-I have already tried a funk-SVD model for my advanced users with this type of data as side features. However, for the sake of the first recommender, since none exist in the market already, a simple approach like jaccard & pearson would be a smart first pass. After validating with these models using RMSE and even precision/recall as a metric, I would then try the funk SVD model with engineered features.
+### Recommender
+To my casual user, I'd like to recommend more popular boardgames like Catan, Carcasonne and Banagrams but to my advanced user, I want to take advantage of the finer grain differences in their ratings so I used a Pearson similarity model. Pearson similarity is essentially the same as a cosine similarity adjusted for the mean rating of each game (see equation 1). This worked really well in accentuating the minor differences from the mean, which is quite meaningful for advanced users. 
+
+For casual users, I used a Jaccard and Cosine similarity metric, both of which performed similarly in RMSE. This indicates that the fact that a casual user has rated a particular game contributes more to the predicted rating than the values of the rating itself! So my final model for this user subset uses Jaccard similarity. 
+
+There is much more to be done on this dataset including joining it with game data, using features like playing time, mechanics (dice roll, cards, strategy) etc.
+
+I have already tried a funk-SVD model for my advanced users with game features as side features. However, for the sake of the first recommender, since none exist in the market already, a simple approach like jaccard & pearson would be a smart first pass. After validating with these models using RMSE and even precision/recall as a metric, I would then try the funk SVD model.
 
 Feel free to connect with me if you'd like to chat more about this project.
-
-Regards,
-Aamir
