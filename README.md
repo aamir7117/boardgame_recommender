@@ -17,6 +17,4 @@ For casual users, I used a Jaccard and Cosine similarity metric, both of which p
 
 There is much more to be done on this dataset including joining it with game data, using features like playing time, mechanics (dice roll, cards, strategy) etc.
 
-I have already tried a funk-SVD model for my advanced users with game features as side features. However, for the sake of the first recommender, since none exist in the market already, a simple approach like jaccard & pearson would be a smart first pass. After validating with these models using RMSE and even precision/recall as a metric, I would then try the funk SVD model.
-
-Feel free to connect with me if you'd like to chat more about this project.
+I have already tried a funk-SVD model for my advanced users with game features as side features. However, for the sake of the first recommender, since none exist in the market already, a simple approach like jaccard & pearson would be a smart first pass. In the future, I would validate these models with precision not F1 since we can't ask users to rate all 5000 games.
