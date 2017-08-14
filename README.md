@@ -2,7 +2,7 @@
 
 ### Motivation
 
-I love boardgames but how do I select which one to buy next? I know there are many boardgame fans out there with the same dilemma. In fact, lots of these fans hang out on boardgamegeek.com where they rate games. Since only the aggregate ratings are displayed, only the most popular ones rise to the top. But with all of the individual ratings, we should be able to make a better recommendation. So that's what I did.
+I love boardgames but how do I select which one to buy next? There are many boardgame fans out there with the same dilemma. In fact, lots of these fans hang out on boardgamegeek.com where they rate games. Since only the aggregate ratings are displayed, only the most popular ones rise to the top. But with all of the individual ratings, we should be able to make a better recommendation. So that's what I did.
 
 ### Data
 I used 10 parallelized Selenium scrapers to extract the individual ratings for every boardgame that was rated on boardgamegeek.com for the last 17 years. In total, I have the ratings of 165,000 users across 5000 boardgames. This data is very sparse (1/200 values present) and naturally, some boardgames have many more ratings than others. Users also follow this pattern, in that, some users rate much more frequently than others.
