@@ -1,5 +1,5 @@
 ## Boardgame Recommender
-see 3 minute video presentation at https://www.youtube.com/watch?v=cw4-v6ylcYU&t=1h49m2s
+See 3 minute video presentation at https://www.youtube.com/watch?v=cw4-v6ylcYU&t=1h49m2s
 
 ### Motivation
 
