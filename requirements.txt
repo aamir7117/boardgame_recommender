@@ -38,7 +38,7 @@ genson==0.1.0
 google-api-python-client==1.6.2
 GraphLab-Create==2.1
 html5lib==0.999999999
-httplib2==0.10.3
+httplib2==0.18.0
 ibmseti==1.0.4
 idna==2.5
 ipaddress==1.0.18
